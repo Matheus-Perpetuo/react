@@ -11,13 +11,13 @@ const Login = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        alert("Enviando os dados: " + username+ " - " + password);
+        alert("Enviando os dados: " + username + " - " + password);
     };
 
   return (
     <div className="container">
         <div>
-            <a href="http://localhost:5173/home">voltar</a>
+            <a href="/">X</a>
         </div>
         <form onSubmit={handleSubmit}>
             <h1>Acesse o sistema</h1>
