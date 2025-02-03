@@ -1,25 +1,34 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';  // Importa o hook para navegação
-import './Home.css';
+import React from "react";
+import "./Home.css";
 
-const Home = () => {
-  const navigate = useNavigate(); // Inicializa o hook de navegação
-
-  // Função de navegação
-  const handleRedirect = (path) => {
-    navigate(path);  // Vai para a rota especificada
-  };
-
+function Home() {
   return (
     <div className="home-container">
-      <h1>Bem-vindo à Home</h1>
-      <div className="buttons-container">
-        <button onClick={() => handleRedirect('/cadastrar')}>Cadastrar Usuário</button>
-        <button onClick={() => handleRedirect('/login')}>Login</button>
-        <button onClick={() => handleRedirect('/')}>Voltar para a Home</button>
-      </div>
+      <header className="navbar">
+        <div className="logo">Dsander <span>Site</span></div>
+        <nav>
+          <ul>
+            <li><a href="/">Início</a></li>
+            <li><a href="/Login">Login</a></li>
+            <li><a href="/Cadastro">Cadastro</a></li>
+            <li><a href="#clientes">Clientes</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+        <div className="phone-number">📞 (##) ####-####</div>
+      </header>
+
+      <section className="hero">
+        <div className="hero-content">
+          <h1>Teste</h1>
+          <p>
+            Texto
+          </p>
+          <button className="cta-button">Saiba Mais</button>
+        </div>
+      </section>
     </div>
   );
-};
+}
 
 export default Home;

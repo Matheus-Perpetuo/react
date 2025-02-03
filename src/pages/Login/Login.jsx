@@ -37,7 +37,7 @@ const Login = () => {
                     <input type="checkbox"/>
                     Lembrar do Login
                 </label>
-                <a href="#">Esquece a senha?</a>
+                <a href="#">Esqueceu a senha?</a>
             </div>
 
             <button>Entrar</button>
