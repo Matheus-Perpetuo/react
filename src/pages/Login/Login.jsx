@@ -23,7 +23,7 @@ const Login = () => {
             <h1>Acesse o sistema</h1>
             <div className = "input-field">
                 <FaUser className="icon" />
-                <input type="email" placeholder='E-mail'
+                <input type="email" placeholder='E-mail' 
                 onChange={(e) => setUsername(e.target.value)}/>
             </div>
             <div className = "input-field">
