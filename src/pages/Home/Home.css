@@ -1,98 +1,136 @@
-/* Estilização geral */
+/* Reset e configuração geral */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f8f8f8;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  color: white;
 }
 
-/* Container principal */
+/* Container principal da Home */
 .home-container {
-  width: 100%;
+  width: 100%; /* Usando 100% da largura para a página home */
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Alterado para alinhar à esquerda */
 }
 
-/* Navbar */
-.navbar {
+/* Navbar da Home */
+.home-navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
+  background: rgba(0, 0, 0, 0.372); /* Cor preta semi-transparente */
   position: fixed;
-  width: 100%;
+  width: 95%; /* Garantindo 100% da largura */
   top: 0;
   left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para dar destaque */
 }
 
-.navbar .logo {
-  font-size: 24px;
+.home-navbar .logo {
+  font-size: 28px;
   font-weight: bold;
-  color: #4000ff;
+  color: #ff5733;
+  text-transform: uppercase;
+  margin-left: 20px; /* Distância do logo da borda */
 }
 
-.navbar .logo span {
-  color: white;
+.home-navbar .logo span {
+  color: #fff;
 }
 
-.navbar ul {
+.home-navbar ul {
   list-style: none;
   display: flex;
   gap: 20px;
 }
 
-.navbar ul li a {
+.home-navbar ul li a {
   text-decoration: none;
-  color: white;
+  color: #fff;
   font-weight: bold;
   transition: 0.3s;
 }
 
-.navbar ul li a:hover {
-  color: #1905f5;
-}
-
-.phone-number {
-  font-size: 16px;
+.home-navbar ul li a:hover {
+  color: #ff5733;
 }
 
 /* Hero Section */
 .hero {
-  height: 100vh;
-  background: url() no-repeat center center/cover;
+  height: calc(100vh - 70px); /* Subtrai a altura da navbar para evitar sobreposição */
+  background: url("/src/assets/hero-bg.jpg") no-repeat center center/cover; 
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 50px;
+  flex-direction: column;
+  align-items: flex-start; /* Alinha o conteúdo à esquerda */
+  justify-content: center;
+  text-align: left; /* Alinhamento à esquerda */
+  padding: 0 50px; /* Padding lateral */
   color: white;
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
 .hero-content {
-  max-width: 500px;
+  max-width: 700px;
 }
 
 .hero h1 {
-  font-size: 36px;
+  font-size: 50px;
   font-weight: bold;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
 }
 
 .hero p {
-  font-size: 18px;
+  font-size: 20px;
   margin-top: 10px;
+  opacity: 0.85;
+  margin-bottom: 30px;
 }
 
 .cta-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #5100ff;
+  padding: 14px 30px;
+  background: linear-gradient(135deg, #ff5733, #c70039);
   border: none;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   color: white;
   cursor: pointer;
   transition: 0.3s;
+  border-radius: 8px;
 }
 
 .cta-button:hover {
-  background-color: #6f00ff;
+  background: linear-gradient(135deg, #c70039, #900c3f);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+  .home-container {
+    align-items: center; /* Alinha ao centro em telas pequenas */
+  }
+
+  .hero-content {
+    max-width: 90%;
+    text-align: center; /* Centraliza o texto em telas pequenas */
+  }
+
+  .cta-button {
+    width: 100%; /* Faz o botão ocupar toda a largura disponível em telas pequenas */
+  }
+
+  .home-navbar .logo {
+    margin-left: 10px; /* Ajusta a margem para telas pequenas */
+  }
+
+  .home-navbar ul {
+    gap: 15px; /* Reduz o espaço entre os links para telas pequenas */
+  }
 }

@@ -16,18 +16,18 @@ body {
 }
 
 /* Caixa de cadastro */
-.login-box {
+.cadastro-box {
   width: 100%;
-  max-width: 400px; /* Limita a largura da caixa */
-  background: rgba(0, 0, 0, 0.206); /* Fundo preto semi-transparente */
+  max-width: 400px; /* Limita a largura da caixa de cadastro */
+  background: rgba(0, 0, 0, 0.206); /* Caixa com fundo preto semi-transparente */
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  margin: 0 auto; /* Centraliza a caixa */
+  margin: 0 auto; /* Centraliza a caixa de cadastro */
 }
 
 /* Título de cadastro */
-.login-title {
+.cadastro-title {
   text-align: center;
   color: #fff;
   margin-bottom: 20px;
@@ -46,7 +46,7 @@ body {
 
 .input-group input {
   width: 100%;
-  max-width: 100%; /* Campo com largura máxima disponível */
+  max-width: 370px; /* Limita a largura dos campos para que não se estiquem demais */
   padding: 10px;
   background: #33333332;
   color: #fff;
@@ -60,9 +60,15 @@ body {
   border-color: #ff5733;
 }
 
-/* Botões de cadastro */
-.login-btn {
-  padding: 10px 20px; /* Tamanho do botão */
+/* Botões do formulário */
+.form-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cadastro-btn {
+  padding: 10px 20px;
   background: linear-gradient(135deg, #ff5733, #c70039);
   border: none;
   font-size: 16px;
@@ -73,19 +79,29 @@ body {
   transition: 0.3s;
 }
 
-.login-btn:hover {
+.cadastro-btn:hover {
   background: linear-gradient(135deg, #c70039, #900c3f);
   transform: scale(1.05);
 }
 
+.login-link {
+  color: #ff5733;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
-  .login-box {
-      padding: 20px;
-      width: 90%; /* Ajusta a largura para dispositivos móveis */
+  .cadastro-box {
+    padding: 20px;
+    width: 90%; /* Ajusta a largura para dispositivos móveis */
   }
 
-  .login-btn {
-      font-size: 14px; /* Tamanho menor do botão */
+  .cadastro-btn {
+    font-size: 14px; /* Menor tamanho de fonte para botões */
   }
 }

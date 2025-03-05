@@ -1,56 +1,71 @@
-import {FaUser, FaLock } from "react-icons/fa"
-import { useState } from "react";
-import "./Login.css";
-
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Para navegação entre páginas
+import { FaArrowLeft } from 'react-icons/fa'; // Ícone de seta para voltar
+import './Login.css';
 
 const Login = () => {
+  const navigate = useNavigate();
 
-    const [username, setUsername] = useState("");
-    const [password, setPassord] = useState("");
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const [lembrar, setLembrar] = useState(false);
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-
-        alert("Enviando os dados: " + username + " - " + password);
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log({ email, senha, lembrar });
+  };
 
   return (
-    <div className="container">
-        <div>
-            <a href="/">X</a>
-        </div>
+    <div className="login-container">
+      <div className="login-box">
+        {/* Ícone de voltar */}
+        <FaArrowLeft className="back-icon" onClick={() => navigate('/')} />
+        
+        <h2 className="login-title">Login</h2>
         <form onSubmit={handleSubmit}>
-            <h1>Acesse o sistema</h1>
-            <div className = "input-field">
-                <FaUser className="icon" />
-                <input type="email" placeholder='E-mail' 
-                onChange={(e) => setUsername(e.target.value)}/>
-            </div>
-            <div className = "input-field">
-                <FaLock className="icon" />
-                <input type="password" placeholder='Senha'
-                onChange={(e) => setPassord(e.target.value)} />
-            </div>
+          <div className="input-group">
+            <label htmlFor="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
 
-            <div className="recall-forget">
-                <label>
-                    <input type="checkbox"/>
-                    Lembrar do Login
-                </label>
-                <a href="#">Esqueceu a senha?</a>
-            </div>
+          <div className="input-group">
+            <label htmlFor="senha">Senha:</label>
+            <input
+              type="password"
+              id="senha"
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
+              required
+            />
+          </div>
 
-            <button>Entrar</button>
+          {/* Checkbox "Lembrar senha" */}
+          <div className="checkbox-group">
+            <label>
+              <input
+                type="checkbox"
+                checked={lembrar}
+                onChange={() => setLembrar(!lembrar)}
+              />
+              Lembrar senha
+            </label>
+            <a href="#" className="forgot-password">Esqueci minha senha</a>
+          </div>
 
-            <div className="signup-link">
-                <p>
-                    Não tem uma conta ? <a href="#">Registrar</a>
-                </p>
-            </div>
-           
+          <div className="form-buttons">
+            <button type="submit" className="login-btn">Entrar</button>
+            <a href="/cadastro" className="register-link">Não possui cadastro? Cadastre-se</a>
+          </div>
         </form>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
