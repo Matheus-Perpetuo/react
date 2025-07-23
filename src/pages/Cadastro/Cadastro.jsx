@@ -1,96 +1,46 @@
-import React, { useState } from 'react';
-import './Cadastro.css'; // Supondo que você tenha um arquivo CSS
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom"; // Para navegação
+import "./Cadastro.css"
 
-const Cadastro = () => {
-  const [email, setEmail] = useState('');
-  const [nome, setNome] = useState('');
-  const [telefone, setTelefone] = useState('');
-  const [senha, setSenha] = useState('');
-  const [dataNascimento, setDataNascimento] = useState('');
+function Cadastro() {
+  const navigate = useNavigate(); // Hook para navegação
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  useEffect(() => {
+    document.body.classList.add("cadastro-page");
 
-    const userData = { email, nome, telefone, senha, dataNascimento };
-
-    try {
-      const response = await fetch('http://localhost:5000/api/cadastro', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(userData),
-      });
-
-      if (response.ok) {
-        console.log('Cadastro realizado com sucesso!');
-        // Redirecionar ou exibir uma mensagem de sucesso
-      } else {
-        console.error('Erro ao cadastrar usuário');
-      }
-    } catch (error) {
-      console.error('Erro na comunicação com o servidor:', error);
-    }
-  };
+    return () => {
+      document.body.classList.remove("cadastro-page");
+    };
+  }, []);
 
   return (
     <div className="cadastro-container">
-      <form onSubmit={handleSubmit} className="cadastro-form">
-        <h2>Cadastrar</h2>
-        <div className="input-group">
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div className="input-group">
-          <label htmlFor="nome">Nome:</label>
-          <input
-            type="text"
-            id="nome"
-            value={nome}
-            onChange={(e) => setNome(e.target.value)}
-            required
-          />
-        </div>
-        <div className="input-group">
-          <label htmlFor="telefone">Telefone:</label>
-          <input
-            type="text"
-            id="telefone"
-            value={telefone}
-            onChange={(e) => setTelefone(e.target.value)}
-            required
-          />
-        </div>
-        <div className="input-group">
-          <label htmlFor="senha">Senha:</label>
-          <input
-            type="password"
-            id="senha"
-            value={senha}
-            onChange={(e) => setSenha(e.target.value)}
-            required
-          />
-        </div>
-        <div className="input-group">
-          <label htmlFor="dataNascimento">Data de Nascimento:</label>
-          <input
-            type="date"
-            id="dataNascimento"
-            value={dataNascimento}
-            onChange={(e) => setDataNascimento(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">Cadastrar</button>
-      </form>
+      {/* Seta para voltar */}
+      <div className="voltar" onClick={() => navigate("/login")}>
+        
+        &#8592; {/* Código HTML para seta esquerda */}
+      </div>
+
+      <h2>Cadastro</h2>
+      <div className="cadastro-input-group">
+        <label>Nome:</label>
+        <input type="text" />
+      </div>
+      <div className="cadastro-input-group">
+        <label>Email:</label>
+        <input type="email" />
+      </div>
+      <div className="cadastro-input-group">
+        <label>Senha:</label>
+        <input type="password" />
+      </div>
+      <div className="cadastro-input-group">
+        <label>Data de Nascimento:</label>
+        <input type="date" />
+      </div>
+      <button className="cadastro-btn">Cadastrar</button>
     </div>
   );
-};
+}
 
 export default Cadastro;

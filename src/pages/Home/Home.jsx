@@ -9,6 +9,7 @@ function Home() {
         <nav>
           <ul>
             <li><a href="/Login">Entrar</a></li>
+            <li><a href="/CadastroVagas">Cadastrar Vagas</a></li>
           </ul>
         </nav>
       </header>

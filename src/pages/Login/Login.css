@@ -1,151 +1,150 @@
 /* Reset e configuração geral */
 body {
-    margin: 0;
-    font-family: "Arial", sans-serif;
-    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
-    color: white;
-  }
-  
-  /* Container principal */
-  .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 0 20px; /* Adicionando padding para evitar que o conteúdo fique muito perto das bordas */
-  }
-  
-  /* Caixa de login */
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  color: white;
+}
+
+/* Container principal */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 20px; /* Adicionando padding para evitar que o conteúdo fique muito perto das bordas */
+}
+
+/* Caixa de login */
+.login-box {
+  width: 100%;
+  max-width: 400px; /* Limita a largura da caixa de login */
+  background: rgba(0, 0, 0, 0.206); /* Caixa com fundo preto semi-transparente */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  margin: 0 auto; /* Centraliza a caixa de login */
+}
+
+/* Título de login */
+.login-title {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* Estilo para os campos de input */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  color: #fff;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  background: #33333332;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box; /* Garante que o padding não aumente a largura do input */
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #ff5733;
+}
+
+/* Ajustar a largura dos inputs para ficarem mais equilibrados */
+.input-group input {
+  width: 100%; /* Garante que os campos ocupem toda a largura possível dentro da caixa */
+  max-width: 100%; /* Remove a limitação de largura */
+  margin: 0; /* Remove a margem automática */
+}
+
+/* Estilo para o grupo de checkbox e links */
+.checkbox-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 45px;
+}
+
+.checkbox-group label {
+  color: #fff;
+}
+
+.forgot-password {
+  color: #ff5733;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* Botões do formulário */
+.form-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-btn {
+  padding: 10px 20px; /* Diminuí o tamanho do botão */
+  background: linear-gradient(135deg, #ff5733, #c70039);
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%; /* Faz o botão ocupar a mesma largura que os inputs */
+  box-sizing: border-box; /* Garante que o padding não aumente a largura do botão */
+}
+
+.login-btn:hover {
+  background: linear-gradient(135deg, #c70039, #900c3f);
+  transform: scale(1.05);
+}
+
+.register-link {
+  color: #ff5733;
+  text-decoration: none;
+  font-size: 14px; /* Tamanho reduzido para o link */
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
   .login-box {
-    width: 100%;
-    max-width: 400px; /* Limita a largura da caixa de login */
-    background: rgba(0, 0, 0, 0.206); /* Caixa com fundo preto semi-transparente */
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    margin: 0 auto; /* Centraliza a caixa de login */
-  }
-  
-  /* Título de login */
-  .login-title {
-    text-align: center;
-    color: #fff;
-    margin-bottom: 20px;
-  }
-  
-  /* Estilo para os campos de input */
-  .input-group {
-    margin-bottom: 20px;
-  }
-  
-  .input-group label {
-    color: #fff;
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .input-group input {
-    width: 100%;
-    max-width: 100%; /* Faz com que o campo use a largura máxima disponível */
-    padding: 10px;
-    background: #33333332;
-    color: #fff;
-    border: 1px solid #555;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  .input-group input:focus {
-    outline: none;
-    border-color: #ff5733;
-  }
-  
-  /* Ajustar a largura dos inputs para ficarem mais equilibrados */
-  .input-group input {
-    width: 100%; /* Garante que os campos ocupem toda a largura possível dentro da caixa */
-    max-width: 370px; /* Limita a largura dos campos para que não se estiquem demais */
-    margin: 0 auto; /* Centraliza os campos */
-  }
-  
-  /* Estilo para o grupo de checkbox e links */
-  .checkbox-group {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 45px;
-  }
-  
-  .checkbox-group label {
-    color: #fff;
-  }
-  
-  .forgot-password {
-    color: #ff5733;
-    text-decoration: none;
-  }
-  
-  .forgot-password:hover {
-    text-decoration: underline;
-  }
-  
-  /* Botões do formulário */
-  .form-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .login-btn {
-    padding: 10px 20px; /* Diminuí o tamanho do botão */
-    background: linear-gradient(135deg, #ff5733, #c70039);
-    border: none;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .login-btn:hover {
-    background: linear-gradient(135deg, #c70039, #900c3f);
-    transform: scale(1.05);
-  }
-  
-  .register-link {
-    color: #ff5733;
-    text-decoration: none;
-    font-size: 14px; /* Tamanho reduzido para o link */
-  }
-  
-  .register-link:hover {
-    text-decoration: underline;
-  }
-  
-  /* Responsividade */
-  @media (max-width: 768px) {
-    .login-box {
-      padding: 20px;
-      width: 90%; /* Ajusta a largura para dispositivos móveis */
-    }
-  
-    .login-btn {
-      font-size: 14px; /* Menor tamanho de fonte para botões */
-    }
-    
+    padding: 20px;
+    width: 90%; /* Ajusta a largura para dispositivos móveis */
   }
 
-  /* Ícone de voltar */
+  .login-btn {
+    font-size: 14px; /* Menor tamanho de fonte para botões */
+  }
+}
+
+/* Ícone de voltar */
 .back-icon {
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-    margin-bottom: 10px;
-    display: block;
-  }
-  
-  .back-icon:hover {
-    color: #ff5733;
-  }
-  
-  
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.back-icon:hover {
+  color: #ff5733;
+}
